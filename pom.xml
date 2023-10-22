@@ -128,6 +128,8 @@
                 <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>4.3.0</version>
             </dependency>
+<!--            mp-->
+
         </dependencies>
     </dependencyManagement>
 </project>
