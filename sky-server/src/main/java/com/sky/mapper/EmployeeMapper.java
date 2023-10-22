@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 @Mapper
+//使用mybatis-plus的BaseMapper接口，就不需要再写mapper.xml文件了
 public interface EmployeeMapper extends BaseMapper<Employee> {
 
     /**
