@@ -1,16 +1,22 @@
 package com.sky.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageHelper;
 import com.sky.constant.MessageConstant;
 import com.sky.constant.PasswordConstant;
 import com.sky.constant.StatusConstant;
 import com.sky.context.BaseContext;
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
+import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.entity.Employee;
 import com.sky.exception.AccountLockedException;
 import com.sky.exception.AccountNotFoundException;
 import com.sky.exception.PasswordErrorException;
 import com.sky.mapper.EmployeeMapper;
+import com.sky.result.PageResult;
 import com.sky.service.EmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,6 +84,34 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.insert(employee);
         //TODO : 清空
+    }
+
+    @Override
+    public PageResult queryPage(EmployeePageQueryDTO employeePageQueryDTO) {
+//        //1.使用PageHelper分页插件
+//        PageHelper.startPage(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
+//        //2.查询数据
+//        Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
+//        //3.封装结果
+//        PageResult pageResult = new PageResult();
+//        pageResult.setTotal(page.getTotal());
+//        pageResult.setRecords(page.getResult());
+//        return pageResult;
+        //TODO 2.使用/mybatis-plus插件
+
+       // 使用QueryWrapper来构造查询，最后再基于分页插件进行分页
+         QueryWrapper<Employee> queryWrapper = new QueryWrapper<>();
+         if (employeePageQueryDTO.getName() != null) {
+             queryWrapper.like("name", employeePageQueryDTO.getName());
+         }
+         //Page 是mybatis-plus的分页对象
+        Page<Employee> page = new Page<>(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
+        //IPage 是mybatis-plus的分页结果对象
+        IPage<Employee> pageData = employeeMapper.selectPage(page, queryWrapper);
+        PageResult pageResult = new PageResult();
+        pageResult.setTotal(pageData.getTotal());
+        pageResult.setRecords(pageData.getRecords());
+        return pageResult;
     }
 
 }
