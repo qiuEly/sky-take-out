@@ -55,3 +55,8 @@ knife4j:
   enable: true
   setting:
     language: zh-CN
+#TODO 让mybatis-plus 使用数据库的递增，而不是使用算法递增
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
