@@ -105,4 +105,11 @@ public class EmployeeController {
         employeeService.update(employeeDTO);
         return Result.success();
     }
+    //查询id
+    @GetMapping("/{id}")
+    public Result<Employee> geById(@PathVariable Long id){
+        log.info("查询id：{}", id);
+        Employee employee = employeeService.getById(id);
+        return Result.success(employee);
+    }
 }

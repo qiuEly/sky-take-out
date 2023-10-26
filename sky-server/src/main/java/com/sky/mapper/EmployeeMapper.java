@@ -19,5 +19,7 @@ public interface EmployeeMapper extends BaseMapper<Employee> {
     @Select("select * from employee where username = #{username}")
     Employee getByUsername(String username);
 
+    void update(Employee employee);
+
 //    Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }
