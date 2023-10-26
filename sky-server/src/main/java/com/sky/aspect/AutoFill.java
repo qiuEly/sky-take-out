@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
  */
 @Aspect
 @Component
-//TODO 使用 aop + 自定义注解实现自动填充
+//TODO  使用 aop + 自定义注解实现自动填充
 public class AutoFill {
     @Pointcut("execution(* com.sky.mapper.*.*(..)) && @annotation(com.sky.annotation.AutoFill)")
     // 修饰符可以省略，所以第一个*表示返回值，第二个*表示类，第三个*表示方法，..表示任意参数

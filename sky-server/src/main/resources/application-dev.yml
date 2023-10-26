@@ -6,3 +6,8 @@ sky:
     database: sky_take_out
     username: bronya
     password: bronya
+  alioss:
+    access-key-secret:  VWvUMbTVrFKftEiASTRhTWssV1Y59g
+    access-key-id: LTAI5tNhy8BCzZ6ouJDtDuVh
+    endpoint: oss-cn-beijing.aliyuncs.com
+    bucket-name: take-out11

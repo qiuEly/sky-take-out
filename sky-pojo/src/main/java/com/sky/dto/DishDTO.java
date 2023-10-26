@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+//Serializable序列化接口，用于实现序列化和反序列化
 public class DishDTO implements Serializable {
 
     private Long id;
