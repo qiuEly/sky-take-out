@@ -7,7 +7,13 @@ sky:
     username: bronya
     password: bronya
   alioss:
-    access-key-secret:  VWvUMbTVrFKftEiASTRhTWssV1Y59g
-    access-key-id: LTAI5tNhy8BCzZ6ouJDtDuVh
+    access-key-secret:  HtPc1kI0Pibr0dXFrJUxS0AG5Qk3mX
+    access-key-id: LTAI5t6kcRwzYocvEwTyN9sw
     endpoint: oss-cn-beijing.aliyuncs.com
     bucket-name: take-out11
+ #redis
+  redis:
+    host: 47.120.38.185
+    port: 6379
+    password: bronya
+    database: 2
