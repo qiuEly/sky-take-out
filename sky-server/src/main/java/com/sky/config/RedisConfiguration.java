@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -26,7 +28,8 @@ public class RedisConfiguration {
        //工厂类
        redisTemplate.setConnectionFactory(redisConnectionFactory);
        //key序列化
-       redisTemplate.setKeySerializer(redisTemplate.getStringSerializer());
+       redisTemplate.setKeySerializer(new StringRedisSerializer());
+       redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
        return redisTemplate;
    }
 }
