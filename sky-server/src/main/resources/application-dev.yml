@@ -17,3 +17,6 @@ sky:
     port: 6379
     password: bronya
     database: 2
+  wechat:
+    appid: wxaf6045c3d04b9b48
+    secret: d7632931ed77f0d308f3c3a2df8c3688
