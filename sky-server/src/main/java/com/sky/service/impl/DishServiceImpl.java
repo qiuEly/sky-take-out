@@ -77,7 +77,7 @@ public class DishServiceImpl implements DishService {
 
     @Override
     @Transactional //开启事务，防止数据不一致
-    public void delete(List<Long> ids) {
+    public void deleteBatch(List<Long> ids) {
         //当前菜品是否在起售中，如果起售，不能直接下架
         ids.forEach(id -> {
             Dish dish = dishMapper.selectById(id);

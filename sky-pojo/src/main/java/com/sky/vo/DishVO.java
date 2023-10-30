@@ -33,6 +33,7 @@ public class DishVO implements Serializable {
     private Integer status;
     //更新时间
     @JsonIgnore
+    //TODO 为什么LocalTime不能序列化? 答：
     private LocalDateTime updateTime;
     //分类名称
     private String categoryName;

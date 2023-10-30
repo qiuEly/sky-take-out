@@ -11,6 +11,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import java.util.Set;
+
 /**
  * 〈一句话功能简述〉<br>
  * 〈〉
@@ -37,4 +39,6 @@ public class RedisConfiguration {
        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
        return redisTemplate;
    }
+
+
 }
