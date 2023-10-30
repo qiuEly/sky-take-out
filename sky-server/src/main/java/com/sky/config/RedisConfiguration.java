@@ -1,5 +1,7 @@
 package com.sky.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +26,9 @@ public class RedisConfiguration {
    @Bean
    public RedisTemplate redisTemplate(RedisConnectionFactory redisConnectionFactory){
        log.info("开始创建redisTemplate");
+       ObjectMapper objectMapper = new ObjectMapper();
+       objectMapper.registerModule(new JavaTimeModule());
+
        RedisTemplate redisTemplate = new RedisTemplate();
        //工厂类
        redisTemplate.setConnectionFactory(redisConnectionFactory);
