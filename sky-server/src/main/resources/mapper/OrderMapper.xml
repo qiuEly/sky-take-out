@@ -38,7 +38,7 @@
                 </if>
                 <if test="deliveryTime != null">
                     delivery_time = #{deliveryTime}
-                </if>f
+                </if>
             </set>
         where id = #{id}
 
