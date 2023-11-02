@@ -1,22 +1,22 @@
 sky:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    host: 47.120.38.185
-    port: 3306
-    database: sky_take_out
-    username: bronya
-    password: bronya
+    host: 你自己的数据库ip
+    port: 端口
+    database: 自己的数据库名
+    username: username
+    password: password
   alioss:
-    access-key-secret:  HtPc1kI0Pibr0dXFrJUxS0AG5Qk3mX
-    access-key-id: LTAI5t6kcRwzYocvEwTyN9sw
-    endpoint: oss-cn-beijing.aliyuncs.com
-    bucket-name: take-out11
+    access-key-secret:  你自己的access-key-secret
+    access-key-id: 你自己的access-key-id
+    endpoint:
+    bucket-name:
  #redis
   redis:
-    host: 47.120.38.185
-    port: 6379
-    password: bronya
-    database: 2
+    host:
+    port:
+    password: 
+    database:
   wechat:
-    appid: wxaf6045c3d04b9b48
-    secret: d7632931ed77f0d308f3c3a2df8c3688
+    appid:
+    secret:
